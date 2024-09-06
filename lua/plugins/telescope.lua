@@ -37,6 +37,9 @@ return {
             vim.keymap.set('n', '<leader>ad', function()
                 builtin.diagnostics { bufnr = nil }
             end, {})
+
+            vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
+
             vim.keymap.set('n', '<leader>sr', builtin.resume, {})
             vim.keymap.set('n', '<leader>/', function()
                 builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
