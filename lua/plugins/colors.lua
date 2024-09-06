@@ -13,6 +13,11 @@ return {
                 sidebars = transparent and 'transparent' or 'dark',
                 floats = transparent and 'transparent' or 'dark',
             },
+            on_highlights = function(highlights, colors)
+                highlights.GitSignsAdd = {
+                    fg = colors.green,
+                }
+            end,
         }
 
         vim.cmd 'colorscheme tokyonight'
