@@ -15,7 +15,13 @@ return {
             },
             on_highlights = function(highlights, colors)
                 highlights.GitSignsAdd = {
-                    fg = colors.green,
+                    fg = '#164846',
+                }
+                highlights.GitSignsChange = {
+                    fg = '#394b70',
+                }
+                highlights.GitSignsDelete = {
+                    fg = '#703438',
                 }
             end,
         }
