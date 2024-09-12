@@ -11,6 +11,7 @@ return {
             },
             sections = {
                 lualine_b = {
+                    'branch',
                     {
                         'diff',
                         diff_color = {
