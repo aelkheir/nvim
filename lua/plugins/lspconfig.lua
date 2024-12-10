@@ -72,7 +72,7 @@ return {
             capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
             local servers = {
-                clangd = {},
+                clangd = { cmd = { 'clangd', '--compile-commands-dir=build' } },
                 lua_ls = {
                     settings = {
                         Lua = {
@@ -102,7 +102,7 @@ return {
             require('mason').setup()
 
             local ensure_installed = vim.tbl_keys(servers or {})
-            vim.list_extend(ensure_installed, { 'stylua', 'ruff', 'black', 'pyright' })
+            vim.list_extend(ensure_installed, { 'neocmakelsp', 'stylua', 'ruff', 'black', 'pyright' })
 
             require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
