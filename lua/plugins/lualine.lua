@@ -20,6 +20,7 @@ return {
                             removed = { fg = colors.git.delete },
                         },
                     },
+                    'diagnostics',
                 },
             },
         }
