@@ -25,10 +25,14 @@ return {
 
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
+
+        'tailwind-tools',
+        'onsails/lspkind-nvim',
     },
     config = function()
         local cmp = require 'cmp'
         local luasnip = require 'luasnip'
+        local lspkind = require 'lspkind'
         luasnip.config.setup {}
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -72,6 +76,11 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
                 { name = 'path' },
+            },
+            formatting = {
+                format = lspkind.cmp_format {
+                    before = require('tailwind-tools.cmp').lspkind_format,
+                },
             },
         }
     end,
