@@ -107,13 +107,32 @@ return {
             require('mason').setup()
 
             local ensure_installed = vim.tbl_keys(servers or {})
-            vim.list_extend(ensure_installed, { 'neocmakelsp', 'stylua', 'ruff', 'black', 'pyright' })
+            -- install_only: list of lsp that we want to install but not setup ourself,
+            -- it's done because other plugins (e.g tailwind-tools) will setup the lsp elsewhere
+            local install_only = { 'tailwindcss' }
+            vim.list_extend(ensure_installed, {
+                'neocmakelsp',
+                'stylua',
+                'ruff',
+                'black',
+                'pyright',
+                'ts_ls',
+                'eslint',
+                'html',
+                'cssls',
+                'prettier',
+                'emmet-language-server',
+            })
+            vim.list_extend(ensure_installed, install_only)
 
             require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
             require('mason-lspconfig').setup {
                 handlers = {
                     function(server_name)
+                        if vim.tbl_contains(install_only, server_name) then
+                            return
+                        end
                         local server = servers[server_name] or {}
                         server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
                         require('lspconfig')[server_name].setup(server)
