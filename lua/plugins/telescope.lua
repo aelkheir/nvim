@@ -37,6 +37,7 @@ return {
             vim.keymap.set('n', '<leader>ad', function()
                 builtin.diagnostics { bufnr = nil }
             end, {})
+            vim.keymap.set('n', '<leader>sd', builtin.diagnostics, {})
 
             vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 
