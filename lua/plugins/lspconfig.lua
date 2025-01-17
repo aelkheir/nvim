@@ -72,7 +72,12 @@ return {
             capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
             local servers = {
-                clangd = { cmd = { 'clangd', '--compile-commands-dir=build' } },
+                clangd = {
+                    cmd = { 'clangd' },
+                    on_attach = function(client, bufnr)
+                        vim.keymap.set('n', '<leader>ch', ':ClangdSwitchSourceHeader<CR>', { silent = true, buffer = bufnr })
+                    end,
+                },
                 lua_ls = {
                     settings = {
                         Lua = {
