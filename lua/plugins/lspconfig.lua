@@ -27,8 +27,8 @@ return {
                     vim.keymap.set('n', '<leader>vd', vim.diagnostic.open_float, {})
                     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
 
-                    vim.keymap.set('n', '[d', vim.diagnostic.goto_next, {})
-                    vim.keymap.set('n', ']d', vim.diagnostic.goto_prev, {})
+                    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {})
+                    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {})
 
                     local builtin = require 'telescope.builtin'
                     vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
