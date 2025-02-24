@@ -7,6 +7,11 @@ vim.keymap.set('i', 'jk', '<Esc>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>nh', '<cmd>nohlsearch<CR>')
 
+vim.keymap.set({ 'n', 't' }, '<M-.>', [[<cmd>vertical resize +5<cr>]])
+vim.keymap.set({ 'n', 't' }, '<M-,>', [[<cmd>vertical resize -5<cr>]])
+vim.keymap.set({ 'n', 't' }, '<M-=>', [[<cmd>horizontal resize +2<cr>]])
+vim.keymap.set({ 'n', 't' }, '<M-->', [[<cmd>horizontal resize -2<cr>]])
+
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
