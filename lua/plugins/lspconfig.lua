@@ -85,6 +85,11 @@ return {
                         },
                     },
                 },
+                vtsls = {
+                    server_capabilities = {
+                        documentFormattingProvider = false,
+                    },
+                },
                 pyright = {
                     handlers = {
                         ['textDocument/publishDiagnostics'] = function() end,
@@ -116,7 +121,6 @@ return {
                 'ruff',
                 'black',
                 'pyright',
-                'ts_ls',
                 'eslint',
                 'html',
                 'cssls',
