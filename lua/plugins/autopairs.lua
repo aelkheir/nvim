@@ -4,7 +4,7 @@ return {
     dependencies = { 'hrsh7th/nvim-cmp' },
     config = function()
         require('nvim-autopairs').setup {
-            disable_filetype = { 'TelescopePrompt', 'spectre_panel', 'typescriptreact', 'javascriptreact' },
+            disable_filetype = { 'TelescopePrompt', 'spectre_panel' },
         }
         -- If you want to automatically add `(` after selecting a function or method
         local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
