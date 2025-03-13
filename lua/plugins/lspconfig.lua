@@ -89,6 +89,11 @@ return {
                     server_capabilities = {
                         documentFormattingProvider = false,
                     },
+                    settings = {
+                        completions = {
+                            completeFunctionCalls = false,
+                        },
+                    },
                 },
                 pyright = {
                     handlers = {
