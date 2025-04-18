@@ -36,6 +36,7 @@ return {
                     vim.keymap.set('n', 'gI', builtin.lsp_implementations, {})
                     vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions, {})
                     vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {})
+                    vim.keymap.set('n', '<leader>W', builtin.lsp_dynamic_workspace_symbols, {})
                     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
                     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
 
