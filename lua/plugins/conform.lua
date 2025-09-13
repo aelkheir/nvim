@@ -19,6 +19,8 @@ return {
             lsp_format = 'fallback',
         },
         formatters_by_ft = {
+            c = { 'clang-format' },
+            cpp = { 'clang-format' },
             lua = { 'stylua' },
             python = { 'ruff_organize_imports', 'black' },
             css = { 'prettier' },

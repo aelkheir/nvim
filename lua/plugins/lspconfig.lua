@@ -125,6 +125,7 @@ return {
                 'neocmakelsp',
                 'stylua',
                 'ruff',
+                'clang-format',
                 'black',
                 'pyright',
                 'eslint',
